@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>转盘</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            background-color: whitesmoke;
+        }
+
+        body {
+            background-image: url("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201802%2F05%2F20180205102851_G253e.jpeg&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1646230425&t=35dcb1af6b36ca0b62a0f15c1fe91038");
+            background-size: 100% 100%;
+        }
+
+        #title {
+            height: 50px;
+            background-color: white;
+            line-height: 50px;
+            padding-left: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        #main {
+            margin: 10px auto;
+            width: 300px;
+            padding-top: 50px;
+            background-color: transparent;
+        }
+
+        h3 {
+            background-color: transparent;
+            color: white;
+        }
+
+        #roulette {
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border-radius: 5px;
+            align-items: center;
+        }
+
+        #roulette li {
+            width: 90px;
+            height: 90px;
+            background-color: salmon;
+            margin: 5px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #list {
+            background-color: white;
+            width: 280px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        #list li {
+            margin: 10px;
+            background-color: transparent;
+        }
+
+        ul {
+            margin: 10px 0;
+        }
+
+        #dialog {
+            height: 200px;
+            position: absolute;
+            top: 30%;
+            left: 20px;
+            right: 20px;
+            border-radius: 5px;
+            padding: 10px;
+            display: none;
+            background-color: red;
+            background-image: url("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbj-yuantu.fotomore.com%2Fcreative%2Fvcg%2Fnew%2FVCG211353186375.jpg%3FExpires%3D1643621487%26OSSAccessKeyId%3DLTAI2pb9T0vkLPEC%26Signature%3DuTzJWnselHPrAfHxwN62L9MelUk%253D%26x-oss-process%3Dimage%252Fauto-orient%252C0%252Fsaveexif%252C1%252Fresize%252Cm_lfit%252Ch_1200%252Cw_1200%252Climit_1%252Fsharpen%252C100%252Fquality%252CQ_80%252Fwatermark%252Cg_se%252Cx_0%252Cy_0%252Cimage_d2F0ZXIvdmNnLXdhdGVyLTIwMDAucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLG1fbGZpdCxoXzE3MSx3XzE3MSxsaW1pdF8x%252F&refer=http%3A%2F%2Fbj-yuantu.fotomore.com&app=2002&size=f10000,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1646230163&t=96f32e12f4089aca5412df1a3925bd46");
+            background-size: 110% 110%;
+            box-shadow: 0px 0px 30px 1px black;
+        }
+
+        #dialog p {
+            color: white;
+            font-weight: bold;
+            background-color: transparent;
+        }
+
+        #dialog div {
+            width: 60px;
+            height: 40px;
+            background-color: white;
+            border-radius: 5px;
+            color: black;
+            text-align: center;
+            line-height: 40px;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="title">给小姜的新年惊喜</div>
+    <div id="main">
+        <h3>抽奖：</h3>
+        <ul id="roulette">
+            <li>一等奖</li>
+            <li>二等奖</li>
+            <li>三等奖</li>
+            <li>谢谢参与</li>
+            <li>开始</li>
+            <li>四等奖</li>
+            <li>七等奖</li>
+            <li>六等奖</li>
+            <li>五等奖</li>
+        </ul>
+
+        <h3>奖励：</h3>
+        <ul id="list">
+            <li>1、答应事情&nbsp&nbsp<b>概率：1%</b></li>
+            <li>2、叫声爸爸&nbsp&nbsp<b>概率：3%</b></li>
+            <li>3、皮肤任选&nbsp&nbsp<b>概率：6%</b></li>
+            <li>4、拜年红包&nbsp&nbsp<b>概率：10%</b></li>
+            <li>5、小小礼物&nbsp&nbsp<b>概率：10%</b></li>
+            <li>6、老公亲亲&nbsp&nbsp<b>概率：20%</b></li>
+            <li>7、老婆亲亲&nbsp&nbsp<b>概率：20%</b></li>
+            <li>8、谢谢参与&nbsp&nbsp<b>概率：30%</b></li>
+        </ul>
+    </div>
+
+    <div id="dialog">
+        <p></p>
+        <div>继续</div>
+    </div>
+
+    <script>
+        let li = document.querySelectorAll("#roulette li");
+        let list = [0, 1, 2, 5, 8, 7, 6, 3];
+        let dialog = document.querySelector("#dialog");
+        let p = document.querySelector("#dialog p");
+        let closure = document.querySelector("#dialog div");
+
+        var cycle = function (data) {
+            for (var i = 0; i < list.length - data; i++) {
+                (function (t) {
+                    setTimeout(function () {
+                        for (let i = 0; i < li.length; i++) {
+                            li[i].style.backgroundColor = "salmon";
+                        }
+                        li[list[t]].style.backgroundColor = "red";
+                    }, 200 * t);
+                })(i)
+            }
+        }
+
+        var pop = function (data) {
+            setTimeout(function () {
+                dialog.style.display = "block";
+                p.innerHTML = "" + data;
+            }, 2000);
+        }
+
+        closure.onclick = function () {
+            dialog.style.display = "none";
+        }
+
+        li[4].onclick = function () {
+            let random = Math.floor((Math.random() * 100) + 1);
+            cycle(0);
+            setTimeout(function () {
+                cycle(0);
+            }, 1600);
+            setTimeout(function () {
+                if (random == 1) {
+                    // 一等奖 1%
+                    cycle(7);
+                    pop("恭喜抽到了: 一等奖，太厉害了吧");
+                } else if (random >= 2 && random <= 4) {
+                    // 二等奖 3%
+                    cycle(6);
+                    pop("恭喜抽到了: 二等奖，这是什么神仙手气");
+                } else if (random >= 5 && random <= 10) {
+                    // 三等奖 6%
+                    cycle(5);
+                    pop("恭喜抽到了: 三等奖，哇塞真🐂哇");
+                } else if (random >= 11 && random <= 20) {
+                    // 四等奖 10%
+                    cycle(4);
+                    pop("恭喜抽到了: 四等奖，拜年红包一个真不戳");
+                } else if (random >= 21 && random <= 30) {
+                    // 五等奖 10%
+                    cycle(3);
+                    pop("恭喜抽到了: 五等奖，拜年小礼物，运气不错哦");
+                } else if (random >= 31 && random <= 50) {
+                    // 六等奖 20%
+                    cycle(2);
+                    pop("恭喜抽到了: 六等奖，快给老公打电话要亲亲哈");
+                } else if (random >= 51 && random <= 70) {
+                    // 七等奖 20%
+                    cycle(1);
+                    pop("恭喜抽到了: 七等奖，老婆亲亲么么么");
+                } else if (random >= 71 && random <= 100) {
+                    // 谢谢参与 30%
+                    cycle(0);
+                    pop("没抽到继续努力哈！");
+                }
+            }, 3200);
+        }
+
+    </script>
+
+</body>
+
+</html>
