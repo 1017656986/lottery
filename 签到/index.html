@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            font-size: 15px;
+            color: #6d7581;
+        }
+
+        ion-icon {
+            background-color: transparent;
+        }
+
+        p,
+        span {
+            background-color: transparent;
+        }
+
+        .top {
+            width: 100%;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .info {
+            padding: 20px;
+        }
+
+        .info_1 {
+            display: flex;
+            align-items: center;
+        }
+
+        .info_1_1 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #3399FE;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .info_1_2 {
+            margin-left: 10px;
+        }
+
+        .info_2 {
+            color: #3399FE;
+        }
+
+        .main {
+            margin-top: 195px;
+            padding: 15px 20px;
+        }
+
+        .main p {
+            color: #464c58;
+        }
+
+        .list {
+            background-color: #F6F7F9;
+        }
+
+        .list li {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            justify-content: center;
+            background-color: transparent;
+        }
+
+        .list ion-icon {
+            color: #6d7581;
+        }
+
+        .hr {
+            width: 100%;
+            height: 0.1px;
+            background-color: whitesmoke;
+        }
+
+        .bottom {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        .bottom div:nth-child(1) {
+            padding: 15px 30px;
+        }
+
+        .bottom div:nth-child(2) {
+            background-color: blue;
+            width: 30%;
+            height: 1px;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="position: fixed;top: 0;z-index: 999;">
+        <img class="top" src="img/top.png" />
+        <div class="info flex">
+            <div class="info_1">
+                <div class="info_1_1">蒋祥</div>
+                <div class="info_1_2">
+                    <p>蒋祥</p>
+                    <p>未知 200303091</p>
+                </div>
+            </div>
+
+            <div class="info_2">
+                2022-01>
+            </div>
+        </div>
+        <div class="flex" style="padding: 15px 20px;background-color: #F6F7F9;">
+            <p>签到月度汇总</p>
+            <p>本月应签到15次</p>
+        </div>
+    </div>
+
+    <div class="main flex">
+        <p>已签到</p>
+        <div class="flex" style="background-color: white;">
+            <p>15次</p>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+    </div>
+
+    <ul class="list">
+
+    </ul>
+
+    <div class="bottom">
+        <div class="flex">
+            <p>签到任务</p>
+            <p>历史签到任务</p>
+            <p>签到统计</p>
+        </div>
+        <div></div>
+    </div>
+
+    <script>
+
+        let list = document.querySelector(".list");
+
+        var str = "";
+        for (let i = 1; i <= 15; i++) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            str += `
+            <li>
+                【02-${i}】19级、20级、21级学生寒假...&nbsp;
+                <span style="color: #e19e34;">范围外签到</span>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </li>
+            <div class="hr"></div>`;
+        }
+        list.innerHTML = str;
+    </script>
+
+
+
+</body>
+
+</html>
